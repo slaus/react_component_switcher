@@ -1,0 +1,79 @@
+.switch {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 62px;
+  height: 36px;
+  margin: 2px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
+  background: linear-gradient(91.55deg, #0ed9ce 24.9%, #42a7e3 81.66%);
+  border: 1px solid #42a7e3;
+  border-radius: 4px;
+
+  &Round {
+    border-radius: 34px;
+
+    .switchSlider {
+      border-radius: 34px;
+
+      &:before {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &Small {
+    width: 52px;
+    height: 26px;
+
+    .switchSlider {
+
+      &:before {
+        height: 16px;
+        width: 16px;
+      }
+    }
+  }
+
+  &Input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .switchSlider {
+      background: linear-gradient(91.55deg, #0ed9ce 24.9%, #42a7e3 81.66%);
+    }
+
+    &:checked + .switchSlider:before {
+      transform: translateX(26px);
+      transition: .3s;
+    }
+  }
+
+  &Slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ccc;
+    border-radius: 3px;
+    border: 1px solid rgba(255,255,255,.55);
+    transition: .3s;
+
+    &:before {
+      content: "";
+      position: absolute;
+      border-radius: 4px;
+      height: 26px;
+      width: 26px;
+      left: 3px;
+      bottom: 3px;
+      background: #fff;
+      transition: .3s;
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, .15);
+    }
+  }
+}
